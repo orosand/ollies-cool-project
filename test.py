@@ -1,17 +1,24 @@
 from PIL import Image
 
-img = Image.open('0.jpg').convert('L')  # convert image to 8-bit grayscale
-WIDTH, HEIGHT = img.size
+imag = Image.open('0.jpg').convert('L')  # convert image to 8-bit grayscale
+	
 
-data = list(img.getdata()) # convert image data to a list of integers
-# convert that to 2D list (list of lists of integers)
-data = [data[offset:offset+WIDTH] for offset in range(0, WIDTH*HEIGHT, WIDTH)]
+def convertImg(img):
+	WIDTH, HEIGHT = img.size
+	picArray = 
 
-# At this point the image's pixels are all in memory and can be accessed
-# individually using data[row][col].
+	data = list(img.getdata()) # convert image data to a list of integers
+	# convert that to 2D list (list of lists of integers)
+	data = [data[offset:offset+WIDTH] for offset in range(0, WIDTH*HEIGHT, WIDTH)]
 
-# For example:
-for row in data:
-    print(' '.join('{:3}'.format(value) for value in row))
+	# At this point the image's pixels are all in memory and can be accessed
+	# individually using data[row][col].
 
-# Here's another more compact representation.
+	# For example:
+	for x in range(0,27):
+		for y in range(0,27): 
+			print data[x][y]
+
+	# Here's another more compact representation.
+
+convertImg(imag)
