@@ -18,18 +18,10 @@ for x in range(784):
 pixels = [] 
 
 #open the array and convert it into the pixel array
-def openConvert(filename):
-	# with open('array.csv') as csvfile:
-	# 	reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_NONNUMERIC) # change contents to floats
-	# 	print(reader)
-		# for row in reader:
-			
-		# 	data = numpy.asarray(row)
-		# 	pixels = data
-		# 	break
+data = list(csv.reader(open('array.csv')))
+data[1][12] = pixels
 
-	data = list(csv.reader(open('array.csv')))
-	print(data[1])
+	
 
 
 def perturb(weightX,weightY, chance, min, max):
@@ -40,6 +32,6 @@ def perturb(weightX,weightY, chance, min, max):
 perturb(12,2,18,-1,1)
 # print weights[12][2]
 
-openConvert('')
+
 
 
