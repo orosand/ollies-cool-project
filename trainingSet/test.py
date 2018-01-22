@@ -3,7 +3,7 @@ import numpy
 import csv
 import os
 	
-picArray = numpy.zeros([41999,2], dtype = object)
+picArray = numpy.zeros([41999,1], dtype = object)
 def convertImg(img,numb,result):
 	WIDTH, HEIGHT = img.size
 	value = [] 
@@ -16,7 +16,7 @@ def convertImg(img,numb,result):
 		for y in range(0,27): 
 			value.append(data[x][y])
 	picArray[numb][0] = value
-	picArray[numb][1] = result
+	# picArray[numb][0] = result
 
 	
 
