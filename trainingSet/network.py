@@ -1,17 +1,13 @@
-# array 784x10
-# array for each pixel
-# array 10x1
-# assign random values to each
-# save weights to a csv
-# perturb weight, randomize within a min and max with a prob and an amount it can be changed
+# Read in array
+# assign values to results based on weights
 
 
-import numpy
+import numpy as np
 import os
 import random
 import csv
 #make the weights array
-weights = numpy.zeros([784,10], dtype = int)
+weights = np.zeros([784,10], dtype = int)
 for x in range(784):
 	for y in range(10):
 		weights[x][y] = random.randint(0,10)
@@ -19,18 +15,13 @@ pixels = []
 results = [0,0,0,0,0,0,0,0,0,0]
 
 #open the array and convert it into the pixel array
-data = list(csv.reader(open('array.csv'),delimiter=','))
+data = np.genfromtxt('array1.csv', delimiter=",")
 
-for i in range(0,41999):
-	for x in range(0,729):
-		data[i][x] = int(data[i][x])
-		x=x+1
-	i = i+1
 		
-print len(data[1])
 print data[1]
 	
-
+for v in range(0,10):
+	for n in range(0,784): 
 
 def perturb(weightX,weightY, chance, min, max):
 	percent = random.randint(0,100)
