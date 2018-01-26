@@ -16,11 +16,19 @@ for x in range(784):
 	for y in range(10):
 		weights[x][y] = random.randint(0,10)
 pixels = [] 
+results = [0,0,0,0,0,0,0,0,0,0]
 
 #open the array and convert it into the pixel array
-data = list(csv.reader(open('array.csv')))
-data[1][12] = pixels
+data = list(csv.reader(open('array.csv'),delimiter=','))
 
+for i in range(0,41999):
+	for x in range(0,729):
+		data[i][x] = int(data[i][x])
+		x=x+1
+	i = i+1
+		
+print len(data[1])
+print data[1]
 	
 
 
